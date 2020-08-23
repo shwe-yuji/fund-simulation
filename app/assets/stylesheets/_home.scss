@@ -4,7 +4,7 @@
   text-align: center;
   line-height: 200px;
   font-size: 32px;
-  background-color: gray;
+  background-color: skyblue;
 }
 
 .tab-list {
@@ -18,9 +18,18 @@
   padding-top: 8px;
   
   &__tab {
+    width: 240px;
+    text-align: center;
     background-color: khaki;
     border-radius: 8px;
     cursor: pointer;
+  }
+
+  &__active-tab {
+    width: 240px;
+    text-align: center;
+    background-color: skyblue;
+    border-radius: 8px;
   }
 
   &__tab:hover {
@@ -46,6 +55,7 @@
     justify-content: space-evenly;
 
     &__table {
+      display: none;
       width: 400px;
       height: 80px;
 
@@ -56,6 +66,7 @@
         &--title {
           background-color: lightslategray;
           width: 50%;
+          font-weight: bold;
           text-align: center;
         }
 
@@ -64,6 +75,11 @@
           text-align: center;
         }
       }
+    }
+
+    &__active-table {
+      width: 400px;
+      height: 80px;
     }
   }
 
