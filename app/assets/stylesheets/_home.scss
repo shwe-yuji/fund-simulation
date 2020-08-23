@@ -1,0 +1,104 @@
+.header {
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+  font-size: 32px;
+  background-color: gray;
+}
+
+.tab-list {
+  width: 80%;
+  height: 100px;
+  margin: 0 auto;
+  font-size: 24px;
+  display: flex;
+  justify-content: space-evenly;
+  line-height: 90px;
+  padding-top: 8px;
+  
+  &__tab {
+    background-color: khaki;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  &__tab:hover {
+    background-color: skyblue;
+  }
+  
+}
+
+.inputform-and-result {
+  width: 80%;
+  height: calc(100vh - 300px);
+  display: flex;
+  margin: 4px auto;
+  justify-content: space-evenly;
+  background-color: skyblue;
+  border: solid 5px skyblue;
+  border-radius: 8px;
+
+  &__inputform {
+    // border: solid 1px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    &__table {
+      width: 400px;
+      height: 80px;
+
+      &__list {
+        border: solid 2px white;
+        height: 40px;
+        
+        &--title {
+          background-color: lightslategray;
+          width: 50%;
+          text-align: center;
+        }
+
+        &--input {
+          background-color: honeydew;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    // border: solid 1px black;
+
+    &--calculate-btn {
+      cursor: pointer;
+    }
+
+    &--reset-btn {
+      cursor: pointer;
+    }
+  }
+
+
+
+  &__result {
+    border: solid 2px blueviolet;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 64px 0px;
+    padding: 0px 40px;
+
+    &--description {
+      font-weight: bold;
+    }
+
+    &--number {
+      border-bottom: solid 1px blue;
+    }
+  }
+}
