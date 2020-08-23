@@ -49,10 +49,10 @@
   border-radius: 8px;
 
   &__inputform {
-    // border: solid 1px black;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    padding-bottom: 180px;
 
     &__table {
       display: none;
@@ -73,6 +73,9 @@
         &--input {
           background-color: honeydew;
           text-align: center;
+          font-weight: bold;
+          color: slateblue;
+          padding: 16px;
         }
       }
     }

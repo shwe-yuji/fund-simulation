@@ -2,69 +2,29 @@
   .inputform-and-result__inputform
     -# 初期
     %table{class: 'inputform-and-result__inputform__active-table', id: 'table1'}
-      %tr.inputform-and-result__inputform__table__list 
-        %th.inputform-and-result__inputform__table__list--title 毎月積立額
-        %td.inputform-and-result__inputform__table__list--input
-          %input
-      %tr.inputform-and-result__inputform__table__list
-        %th.inputform-and-result__inputform__table__list--title 積立期間
-        %td.inputform-and-result__inputform__table__list--input
-          %input
-      %tr.inputform-and-result__inputform__table__list
-        %th.inputform-and-result__inputform__table__list--title リターン
-        %td.inputform-and-result__inputform__table__list--input
-          %input
+      = render 'input_monthly_deposit'
+      = render 'input_period'
+      = render 'input_return'
 
     -# 変更
     %table{ class: 'inputform-and-result__inputform__table', id: 'table2'}
-      %tr.inputform-and-result__inputform__table__list 
-        %th.inputform-and-result__inputform__table__list--title 最終積立金額
-        %td.inputform-and-result__inputform__table__list--input
-          %input
-      %tr.inputform-and-result__inputform__table__list
-        %th.inputform-and-result__inputform__table__list--title 積立期間
-        %td.inputform-and-result__inputform__table__list--input
-          %input
-      %tr.inputform-and-result__inputform__table__list
-        %th.inputform-and-result__inputform__table__list--title リターン
-        %td.inputform-and-result__inputform__table__list--input
-          %input
-    
+      = render 'input_final_amount'
+      = render 'input_period'
+      = render 'input_return'
 
     %table{ class: 'inputform-and-result__inputform__table', id: 'table3'}
-      %tr.inputform-and-result__inputform__table__list 
-        %th.inputform-and-result__inputform__table__list--title 最終積立金額
-        %td.inputform-and-result__inputform__table__list--input
-          %input
-      %tr.inputform-and-result__inputform__table__list
-        %th.inputform-and-result__inputform__table__list--title 毎月積立額
-        %td.inputform-and-result__inputform__table__list--input
-          %input
-      %tr.inputform-and-result__inputform__table__list
-        %th.inputform-and-result__inputform__table__list--title リターン
-        %td.inputform-and-result__inputform__table__list--input
-          %input
+      = render 'input_final_amount'
+      = render 'input_monthly_deposit'
+      = render 'input_return'
 
     %table{ class: 'inputform-and-result__inputform__table', id: 'table4'}
-      %tr.inputform-and-result__inputform__table__list 
-        %th.inputform-and-result__inputform__table__list--title 最終積立金額
-        %td.inputform-and-result__inputform__table__list--input
-          %input
-      %tr.inputform-and-result__inputform__table__list
-        %th.inputform-and-result__inputform__table__list--title 毎月積立額
-        %td.inputform-and-result__inputform__table__list--input
-          %input
-      %tr.inputform-and-result__inputform__table__list
-        %th.inputform-and-result__inputform__table__list--title 積立期間
-        %td.inputform-and-result__inputform__table__list--input
-          %input
-
-
+      = render 'input_final_amount'
+      = render 'input_monthly_deposit'
+      = render 'input_period'
 
   .inputform-and-result__btns
     %button.inputform-and-result__btns--calculate-btn 計算する
     %button.inputform-and-result__btns--reset-btn リセット
-
 
   .inputform-and-result__result
     %h.inputform-and-result__result--description 計算結果です
