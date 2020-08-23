@@ -23,9 +23,13 @@
       = render 'input_period'
 
   .inputform-and-result__btns
-    %button.inputform-and-result__btns--calculate-btn 計算する
-    %button.inputform-and-result__btns--reset-btn リセット
+    %button.inputform-and-result__btns--calculate-btn
+      = icon('fas', 'calculator') 
+      計算する
+    %button.inputform-and-result__btns--reset-btn
+      = icon('fas', 'redo') 
+      リセット
 
   .inputform-and-result__result
     %h.inputform-and-result__result--description 計算結果です
-    .inputform-and-result__result--number ◯◯円
+    .inputform-and-result__result--number 結果だよ！
