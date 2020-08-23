@@ -55,6 +55,7 @@
     justify-content: space-evenly;
 
     &__table {
+      display: none;
       width: 400px;
       height: 80px;
 
@@ -65,6 +66,7 @@
         &--title {
           background-color: lightslategray;
           width: 50%;
+          font-weight: bold;
           text-align: center;
         }
 
@@ -73,6 +75,11 @@
           text-align: center;
         }
       }
+    }
+
+    &__active-table {
+      width: 400px;
+      height: 80px;
     }
   }
 
