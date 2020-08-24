@@ -8,8 +8,16 @@ $(document).on('turbolinks:load', function(){
     return element - 0;
   };
 
+  function resultReset(){
+    var result = $('.inputform-and-result__result--number');
+    result.empty();
+  };
+
   $('.inputform-and-result__btns--calculate-btn').on('click', function(){
-    reset();
+
+    // 前回に出力された値をリセット
+    resultReset();
+
     // 計算に使用する数値を取得　getElement(element, text)を使用
     var monthly_deposit = 0; var monthly_deposit_text = 'monthly-deposit';
     var year = 0; var year_text = 'year';
@@ -23,7 +31,6 @@ $(document).on('turbolinks:load', function(){
     Return = getElement(Return, Return_text);
     final_amount = getElement(final_amount, final_amount_text);
 
-
     // タブ番号で処理を分岐
     var tab_index = $('.inputform-and-result__inputform__active-table').attr('id').replace('table', "");
     if (tab_index == 1) {
@@ -36,19 +43,8 @@ $(document).on('turbolinks:load', function(){
       var result = 4;
     };
     
-    console.log(result);
+    // console.log(result);
     $('.inputform-and-result__result--number').prepend(result);
-
-
-
-
-
-
-    // console.log(getElement(monthly_deposit, monthly_deposit_text));
-    // console.log(getElement(year, year_text));
-    // console.log(getElement(month, month_text));
-    // console.log(getElement(Return, Return_text));
-    // console.log(getElement(final_amount, final_amount_text));
 
   });
 });

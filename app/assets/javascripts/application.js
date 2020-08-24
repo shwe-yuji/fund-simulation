@@ -16,3 +16,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+function reset(){
+    // リセットしたいセレクタを取得
+    var inputs = $('.inputform-and-result__inputform__table__list--input input');
+    var result = $('.inputform-and-result__result--number');
+    // リセット
+    inputs.val("");
+    result.empty();
+};
