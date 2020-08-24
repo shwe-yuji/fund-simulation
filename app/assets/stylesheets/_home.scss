@@ -109,8 +109,6 @@
     }
   }
 
-
-
   &__result {
     border: solid 2px blueviolet;
     border-radius: 8px;
@@ -125,6 +123,9 @@
     }
 
     &--number {
+      text-align: center;
+      font-weight: bold;
+      color: red;
       border-bottom: solid 1px blue;
     }
   }
