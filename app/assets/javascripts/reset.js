@@ -15,7 +15,7 @@ $(document).on('turbolinks:load', function(){
   });
 
   $('.tab-list__tab').on('click', function(){
-  //  タブの切り替え時もフォームをリセットする
+    //  タブの切り替え時もフォームをリセットする
   reset();
   });
 });
