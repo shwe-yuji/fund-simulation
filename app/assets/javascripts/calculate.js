@@ -13,6 +13,10 @@ $(document).on('turbolinks:load', function(){
     result.empty();
   };
 
+  function prependResult(result){
+    $('.inputform-and-result__result--number').prepend(result);
+  };
+
   $('.inputform-and-result__btns--calculate-btn').on('click', function(){
 
     // 前回に出力された値をリセット
@@ -31,16 +35,21 @@ $(document).on('turbolinks:load', function(){
     Return = getElement(Return, Return_text);
     final_amount = getElement(final_amount, final_amount_text);
 
+    var times = year * 12 + month;
+    var monthly_Return = Return / 100.0 / 12.0;
+
     // タブ番号で処理を分岐
     var tab_index = $('.inputform-and-result__inputform__active-table').attr('id').replace('table', "");
     if (tab_index == 1) {
       // 最終積立額を計算
-      var times = year * 12 + month;
-      var monthly_Return = Return / 100.0 / 12.0;
-      var result = monthly_deposit * (1 + monthly_Return) * ((1 +monthly_Return) ** times - 1) / (monthly_Return);
-      $('.inputform-and-result__result--number').prepend(result);
+      var result = monthly_deposit * (1 + monthly_Return) * ((1 + monthly_Return) ** times - 1) / (monthly_Return);
+      prependResult(result);
+
     } else if (tab_index == 2) {
-      var result = 2;
+      var result = (final_amount * monthly_Return) / (1 + monthly_Return) / ((1 + monthly_Return) ** times - 1);
+      console.log(result);
+      prependResult(result);
+
     } else if (tab_index == 3) {
       var result = 3;
     } else if (tab_index == 4) {
