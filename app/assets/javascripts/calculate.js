@@ -51,9 +51,12 @@ $(document).on('turbolinks:load', function(){
       prependResult(result);
 
     } else if (tab_index == 3) {
-      var result = 3;
+      var result = Math.log((final_amount * monthly_Return) / (monthly_deposit + monthly_deposit * monthly_Return) + 1) / Math.log(1 + monthly_Return);
+      prependResult(result);
+
     } else if (tab_index == 4) {
       var result = 4;
+      prependResult(result);
     };
     
     // console.log(result);
