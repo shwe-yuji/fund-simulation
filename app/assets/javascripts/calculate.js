@@ -18,7 +18,6 @@ $(document).on('turbolinks:load', function(){
   };
 
   $('.inputform-and-result__btns--calculate-btn').on('click', function(){
-
     // 前回に出力された値をリセット
     resultReset();
 
@@ -43,24 +42,25 @@ $(document).on('turbolinks:load', function(){
     if (tab_index == 1) {
       // 最終積立額を計算
       var result = monthly_deposit * (1 + monthly_Return) * ((1 + monthly_Return) ** times - 1) / (monthly_Return);
-      prependResult(result);
+      prependResult(Math.floor(result) + "円");
 
     } else if (tab_index == 2) {
+      // 毎月積立額を計算
       var result = (final_amount * monthly_Return) / (1 + monthly_Return) / ((1 + monthly_Return) ** times - 1);
-      console.log(result);
-      prependResult(result);
+      prependResult(Math.ceil(result) + "円");
 
     } else if (tab_index == 3) {
+      // 積立期間を計算
       var result = Math.log((final_amount * monthly_Return) / (monthly_deposit + monthly_deposit * monthly_Return) + 1) / Math.log(1 + monthly_Return);
-      prependResult(result);
+      var result_year = result / 12;
+      var result_month = result % 12;
+      prependResult(Math.floor(result_year) + "年" + Math.ceil(result_month) +  "ヶ月");
 
     } else if (tab_index == 4) {
+      // リターンを計算
       var result = 4;
       prependResult(result);
     };
-    
-    // console.log(result);
-    // $('.inputform-and-result__result--number').prepend(result);
 
   });
 });
