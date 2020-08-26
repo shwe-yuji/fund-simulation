@@ -1,23 +1,23 @@
 .inputform-and-result
   .inputform-and-result__inputform
-    -# 初期
-    %table{class: 'inputform-and-result__inputform__active-table', id: 'table1'}
+    -# デフォルト
+    %table{class: 'inputform-and-result__inputform__active-table', id: 'table1' }
       = render 'input_monthly_deposit'
       = render 'input_period'
       = render 'input_return'
 
-    -# 変更
-    %table{ class: 'inputform-and-result__inputform__table', id: 'table2'}
+    -# non-active
+    %table{ class: 'inputform-and-result__inputform__table', id: 'table2' }
       = render 'input_final_amount'
       = render 'input_period'
       = render 'input_return'
 
-    %table{ class: 'inputform-and-result__inputform__table', id: 'table3'}
+    %table{ class: 'inputform-and-result__inputform__table', id: 'table3' }
       = render 'input_final_amount'
       = render 'input_monthly_deposit'
       = render 'input_return'
 
-    %table{ class: 'inputform-and-result__inputform__table', id: 'table4'}
+    %table{ class: 'inputform-and-result__inputform__table', id: 'table4' }
       = render 'input_final_amount'
       = render 'input_monthly_deposit'
       = render 'input_period'
@@ -31,5 +31,31 @@
       リセット
 
   .inputform-and-result__result
-    %h.inputform-and-result__result--description 計算結果です
+    -# デフォルト
+    %h{ class: 'inputform-and-result__result--active-description', id: 'description1' } 
+      = "左の条件で積立した場合、"
+      %br
+      = "最終積立金額は"
+    -# non-active
+    %h{ class: 'inputform-and-result__result--description', id: 'description2' } 
+      = "目標額を達成するには、"
+      %br
+      = "毎月"
+    %h{ class: 'inputform-and-result__result--description', id: 'description3' } 
+      = "目標額を達成するには、"
+      %br
+    %h{ class: 'inputform-and-result__result--description', id: 'description4' } 
+      = "目標額を達成するには、"
+      %br
+
     .inputform-and-result__result--number
+    -# デフォルト
+    %h{ class: 'inputform-and-result__result--active-conclusion', id: 'conclusion1' } 
+      = "です。"
+    -# non-active
+    %h{ class: 'inputform-and-result__result--conclusion', id: 'conclusion2' }
+      = "の積立が必要です。"
+    %h{ class: 'inputform-and-result__result--conclusion', id: 'conclusion3' }
+      = "積立する必要があります。"
+    %h{ class: 'inputform-and-result__result--conclusion', id: 'conclusion4' }
+      = "のリターンが必要です。"

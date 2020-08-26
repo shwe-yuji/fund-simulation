@@ -119,6 +119,11 @@
     padding: 0px 40px;
 
     &--description {
+      display: none;
+      font-weight: bold;
+    }
+
+    &--active-description {
       font-weight: bold;
     }
 
@@ -127,6 +132,17 @@
       font-weight: bold;
       color: red;
       border-bottom: solid 1px blue;
+    }
+
+    &--conclusion {
+      display: none;
+      text-align: right;
+      font-weight: bold;
+    }
+
+    &--active-conclusion {
+      text-align: right;
+      font-weight: bold;
     }
   }
 }

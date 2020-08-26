@@ -41,6 +41,12 @@ $(document).on('turbolinks:load', function(){
     var tab_index = $('.inputform-and-result__inputform__active-table').attr('id').replace('table', "");
     if (tab_index == 1) {
       // 最終積立額を計算
+
+      console.log(monthly_deposit);
+      console.log(year);
+      console.log(month);
+      console.log(Return);
+
       var result = monthly_deposit * (1 + monthly_Return) * ((1 + monthly_Return) ** times - 1) / (monthly_Return);
       prependResult(Math.floor(result) + "円");
 
