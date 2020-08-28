@@ -17,11 +17,6 @@
       = render 'input_monthly_deposit'
       = render 'input_return'
 
-    %table{ class: 'inputform-and-result__inputform__table', id: 'table4' }
-      = render 'input_final_amount'
-      = render 'input_monthly_deposit'
-      = render 'input_period'
-
   .inputform-and-result__btns
     %button.inputform-and-result__btns--calculate-btn
       = icon('fas', 'calculator') 
@@ -44,9 +39,6 @@
     %h{ class: 'inputform-and-result__result--description', id: 'description3' } 
       = "目標額を達成するには、"
       %br
-    %h{ class: 'inputform-and-result__result--description', id: 'description4' } 
-      = "目標額を達成するには、"
-      %br
 
     .inputform-and-result__result--number
     -# デフォルト
@@ -57,5 +49,3 @@
       = "の積立が必要です。"
     %h{ class: 'inputform-and-result__result--conclusion', id: 'conclusion3' }
       = "積立する必要があります。"
-    %h{ class: 'inputform-and-result__result--conclusion', id: 'conclusion4' }
-      = "のリターンが必要です。"
