@@ -55,19 +55,6 @@ $(document).on('turbolinks:load', function(){
       var result_year = result / 12;
       var result_month = result % 12;
       prependResult(Math.floor(result_year) + "年" + Math.ceil(result_month) +  "ヶ月");
-
-    } else if (tab_index == 4) {
-      // リターンを計算
-      // var result = 4;
-      var times = year * 12 + month;
-      for(var i = 1; i <= times; i++) {
-        var lack = final_amount - (monthly_deposit * i);
-        // console.log(lack);
-        var result = lack / (monthly_deposit * i) / i * 100
-        console.log(result);
-      }
-      prependResult(Math.round(result) / 100 + "%");
     };
-
   });
 });
