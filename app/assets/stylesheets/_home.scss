@@ -49,10 +49,18 @@
   border-radius: 8px;
 
   &__inputform {
-    // border: solid 1px black;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    padding-bottom: 180px;
+    
+    // スピンボタン削除
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
 
     &__table {
       display: none;
@@ -73,6 +81,9 @@
         &--input {
           background-color: honeydew;
           text-align: center;
+          font-weight: bold;
+          color: slateblue;
+          padding: 16px;
         }
       }
     }
@@ -98,8 +109,6 @@
     }
   }
 
-
-
   &__result {
     border: solid 2px blueviolet;
     border-radius: 8px;
@@ -110,11 +119,30 @@
     padding: 0px 40px;
 
     &--description {
+      display: none;
+      font-weight: bold;
+    }
+
+    &--active-description {
       font-weight: bold;
     }
 
     &--number {
+      text-align: center;
+      font-weight: bold;
+      color: red;
       border-bottom: solid 1px blue;
+    }
+
+    &--conclusion {
+      display: none;
+      text-align: right;
+      font-weight: bold;
+    }
+
+    &--active-conclusion {
+      text-align: right;
+      font-weight: bold;
     }
   }
 }
