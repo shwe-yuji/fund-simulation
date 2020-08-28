@@ -14,7 +14,7 @@ $(document).on('turbolinks:load', function(){
     reset();
   });
 
-  $('.tab-list__tab').on('click', function(){
+  $('.tab-list li').on('click', function(){
     // タブの切り替え時もフォームをリセットする
     reset();
   });
