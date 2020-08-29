@@ -55,7 +55,7 @@ $(document).on('turbolinks:load', function(){
         window.alert("最終積立金額の算出には、毎月積立額および積立期間の入力が必須となります。ご入力いただき、再度「計算」ボタンをクリックしてください。");
         $('.inputform-and-result__inputform__table__list--input--return').val(0);
       } else if (Return == 0) {
-        var result = (year * 12 + month) * monthly_deposit;
+        var result = times * monthly_deposit;
         prependResult(Math.floor(result) + "円");
       } else {
         var result = monthly_deposit * (1 + monthly_Return) * ((1 + monthly_Return) ** times - 1) / (monthly_Return);
@@ -69,9 +69,17 @@ $(document).on('turbolinks:load', function(){
         $('.inputform-and-result__inputform__table__list--input--return').val(0);
       } else if (Return == 0) {
         var result = final_amount / (year * 12 + month)
+        if (result < 1) {
+          window.alert("計算結果として、毎月積立額が１円未満となります。左記の条件をご確認いただき、再度ご入力ください。");
+          return;
+        }
         prependResult(Math.ceil(result) + "円");
       } else {
         var result = (final_amount * monthly_Return) / (1 + monthly_Return) / ((1 + monthly_Return) ** times - 1);
+        if (result < 1) {
+          window.alert("計算結果として、毎月積立額が１円未満となります。左記の条件をご確認いただき、再度ご入力ください。");
+          return;
+        }
         prependResult(Math.ceil(result) + "円");
       }
 
@@ -80,12 +88,14 @@ $(document).on('turbolinks:load', function(){
       if (final_amount == 0 || monthly_deposit == 0) {
         window.alert("積立期間の算出には、最終積立金額および毎月積立額の入力が必須となります。ご入力いただき、再度「計算」ボタンをクリックしてください。");
         $('.inputform-and-result__inputform__table__list--input--return').val(0);
+      } else if (final_amount < monthly_deposit) {
+        window.alert("毎月積立金額が最終積立金額を上回っています。。");
+        $('.inputform-and-result__inputform__table__list--input--return').val(0);
       } else if (Return == 0) {
         var result = final_amount / monthly_deposit;
         var result_year = result / 12;
         var result_month = result % 12;
         prependPeriod(result_year, result_month);
-
       } else {
         var result = Math.log((final_amount * monthly_Return) / (monthly_deposit + monthly_deposit * monthly_Return) + 1) / Math.log(1 + monthly_Return);
         var result_year = result / 12;
