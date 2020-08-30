@@ -18,18 +18,14 @@
   padding-top: 8px;
   
   &__tab {
-    width: 240px;
-    text-align: center;
+    @include tab-config;
     background-color: khaki;
-    border-radius: 8px;
     cursor: pointer;
   }
 
   &__active-tab {
-    width: 240px;
-    text-align: center;
+    @include tab-config;
     background-color: skyblue;
-    border-radius: 8px;
   }
 
   &__tab:hover {
@@ -84,6 +80,28 @@
           font-weight: bold;
           color: slateblue;
           padding: 16px;
+          display: flex;
+          justify-content: space-evenly;
+
+          &--final-amount {
+            @include input-money-or-return;
+          }
+
+          &--monthly-deposit {
+            @include input-money-or-return;
+          }
+
+          &--year {
+            @include input-period;
+          }
+
+          &--month {
+            @include input-period;
+          }
+
+          &--return {
+            @include input-money-or-return;
+          }
         }
       }
     }
@@ -131,6 +149,7 @@
       text-align: center;
       font-weight: bold;
       color: red;
+      font-size: 32px;
       border-bottom: solid 1px blue;
     }
 
