@@ -1,24 +1,30 @@
 # README
+Fund-Simulation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 概要
+投資信託のシミュレーションアプリケーションのコピーアプリ
+目標達成に必要な金額、期間を計算します
 
-Things you may want to cover:
+# 参考させていただいたサイト
+楽天証券様
+https://www.rakuten-sec.co.jp/web/fund/saving/simulation/
 
-* Ruby version
+# 使い方
+$ git clone https://github.com/shwe-yuji/fund-simulation.git
+$ rails s
 
-* System dependencies
+localhost:3000にアクセス
 
-* Configuration
+入力フォームに数値を入れて、計算ボタンをクリック
+リセットボタンで出力結果をリセット
 
-* Database creation
+# 環境
+Ruby 2.5.1
+Rails 5.2.4.3
+MySQL 5.6.47
 
-* Database initialization
+# 製作者
+shwe-yuji
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+PORTFOLIO
+https://github.com/shwe-yuji
